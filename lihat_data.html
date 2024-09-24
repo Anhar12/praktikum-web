@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tentang Kami | Pendataan Mahasiswa Unversitas Mulawarman</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="styles/base.css" />
+
+    <link rel="stylesheet" href="styles/home.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar-section">
+        <div class="nav-header">
+        <a href="index.html">
+            <img src="assets/unmul-logo.png" alt="Logo Universitas Mulawarman" width="50" height="50" />
+        </a>
+
+        <button id="btn-hamburger">
+            <i class="fas fa-bars"></i>
+        </button>
+        </div>
+
+        <menu class="navbar-list">
+        <li class="navbar-item">
+            <a href="index.html">
+            Beranda
+            </a>
+        </li>
+        <li class="navbar-item">
+            <a href="lihat_data.html">
+            Lihat Data
+            </a>
+        </li>
+        <li class="navbar-item">
+            <a href="tentang_kami.html">
+            Tentang Kami
+            </a>
+        </li>
+        </menu>
+
+        <a href="login.html" class="button">
+        Login
+        </a>
+    </nav>
+
+    <!-- sidebar -->
+    <nav class="sidebar-section">
+        <div class="nav-header">
+            <a href="index.html">
+                <img src="assets/unmul-logo.png" alt="Logo Universitas Mulawarman" width="50" height="50" />
+            </a>
+
+            <button id="btn-close">
+                <i class="fas fa-xmark"></i>
+            </button>
+        </div>
+
+        <div class="sidebar-content">
+            <menu class="sidebar-list">
+                <li class="sidebar-item">
+                    <a href="index.html">
+                    Beranda
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="lihat_data.html">
+                    Lihat Data
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="tentang_kami.html">
+                    Tentang Kami
+                    </a>
+                </li>
+            </menu>
+        
+            <a href="login.html" class="button">
+                Login
+            </a>
+        </div>
+    </nav>
+
+    <div class="overlay"></div>
+    <main class="data-mahasiswa-section">
+
+      <h1 class="data-mahasiswa-title">
+        Data Mahasiswa Universitas Mulawarman
+      </h1>
+
+      <search>
+        <form action="" class="search-bar-mahasiswa">
+          <input type="text" placeholder="Cari nama atau NIM di sini" class="search-input-mahasiswa" />
+          <button type="submit" class="search-button-mahasiswa">
+            <i class="fa-solid fa-magnifying-glass fa-xl"></i>
+          </button>
+        </form>
+      </search>
+
+      <table class="table-mahasiswa">
+        <thead>
+          <tr class="table-mahasiswa-row">
+            <th class="table-mahasiswa-header">No</th>
+            <th class="table-mahasiswa-header">Foto</th>
+            <th class="table-mahasiswa-header">Nama</th>
+            <th class="table-mahasiswa-header">NIM</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="table-mahasiswa-row">
+            <td class="table-mahasiswa-data">1</td>
+            <td class="table-mahasiswa-data">Ini foto</td>
+            <td class="table-mahasiswa-data">Muhammad Farrel Sirah</td>
+            <td class="table-mahasiswa-data">2209106138</td>
+          </tr>
+          <tr class="table-mahasiswa-row">
+            <td class="table-mahasiswa-data">2</td>
+            <td class="table-mahasiswa-data">Ini foto</td>
+            <td class="table-mahasiswa-data">Miftahul Huda</td>
+            <td class="table-mahasiswa-data">2209106098</td>
+          </tr>
+          <tr class="table-mahasiswa-row">
+            <td class="table-mahasiswa-data">3</td>
+            <td class="table-mahasiswa-data">Ini foto</td>
+            <td class="table-mahasiswa-data">Ahmad Dhafin</td>
+            <td class="table-mahasiswa-data">2209106169</td>
+          </tr>
+          <tr class="table-mahasiswa-row">
+            <td class="table-mahasiswa-data">4</td>
+            <td class="table-mahasiswa-data">Ini foto</td>
+            <td class="table-mahasiswa-data">Fiko Anugrah Ramdani</td>
+            <td class="table-mahasiswa-data">2209106313</td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+
+    <!-- Footbar -->
+    <footer class="footbar-section">
+      <div class="footbar-container">
+        <figure class="footbar-brand">
+          <img src="assets/unmul-logo.png" alt="" width="75px" height="75px" />
+          <figcaption>
+            UNIVERSITAS <br />
+            MULAWARMAN
+          </figcaption>
+        </figure>
+
+        <address>
+          <menu class="footbar-list">
+            <li class="footbar-item">
+              <i class="fa-solid fa-phone" style="margin-right: 5px"></i>
+              <a href="tel:+628115551962">
+                +(62) 811 555 1962
+              </a>
+            </li>
+            <li class="footbar-item">
+              <i class="fa-solid fa-envelope" style="margin-right: 5px"></i>
+              <a href="mailto:humas@unmul.ac.id">
+                humas@unmul.ac.id
+              </a>
+            </li>
+            <li class="footbar-item">
+              <i class="fa fa-question-circle" style="margin-right: 5px"></i>
+              <a href="tel:199">
+                Hotline 119
+              </a>
+            </li>
+          </menu>
+        </address>
+      </div>
+
+      <div class="footbar-container">
+        <p class="footbar-title">
+          LIHAT
+        </p>
+
+        <menu class="footbar-list">
+          <li class="footbar-item">
+            <a href="https://unmul.ac.id"> 
+              Universitas Mulawarman
+            </a>
+          </li>
+          <li class="footbar-item">
+            <a href="https://ais.unmul.ac.id">
+              Academic Integrated System
+            </a>
+          </li>
+          <li class="footbar-item">
+            <a href="https://star.unmul.ac.id">
+              Sistem Aplikasi Belajar
+            </a>
+          </li>
+          <li class="footbar-item">
+            <a href="https://ukt.unmul.ac.id">
+              Sistem Informasi UKT
+            </a>
+          </li>
+        </menu>
+      </div>
+
+      <div class="footbar-container">
+        <p class="footbar-title">
+          LOKASI KAMPUS
+        </p>
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d16873.042654561752!2d117.1539974!3d-0.4684587!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2df67f4bb8b9dcd1%3A0x6fd5d38233261f93!2sMulawarman%20University!5e1!3m2!1sen!2sid!4v1726208163696!5m2!1sen!2sid" style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map"></iframe>
+      </div>
+    </footer>
+    <script src="scripts/script.js"></script>
+  </body>
+</html>

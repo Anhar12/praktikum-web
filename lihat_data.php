@@ -1,3 +1,15 @@
+<?php 
+  require 'koneksi.php';
+
+  $sql = mysqli_query($conn, "SELECT * FROM mahasiswa");
+
+  $mahasiswa = [];
+
+  while($row = mysqli_fetch_assoc($sql)){
+    $mahasiswa[] = $row;
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -29,6 +41,13 @@
         </form>
       </search>
 
+      <div style="width: 100%;">
+        <a href="tambah_data.php" class="button">
+          <i class="fa-solid fa-plus"></i>
+          Tambah Mahasiswa
+        </a>
+      </div>
+
       <table class="table-mahasiswa">
         <thead>
           <tr class="table-mahasiswa-row">
@@ -42,20 +61,27 @@
           </tr>
         </thead>
         <tbody>
+          <?php $i = 1; foreach($mahasiswa as $mhs): ?>
           <tr class="table-mahasiswa-row">
-            <td class="table-mahasiswa-data">1</td>
+            <td class="table-mahasiswa-data"><?php echo $i ?></td>
             <td class="table-mahasiswa-data"></td>
-            <td class="table-mahasiswa-data">Muhammad Farrel Sirah</td>
-            <td class="table-mahasiswa-data">2209106138</td>
-            <td class="table-mahasiswa-data">C</td>
-            <td class="table-mahasiswa-data">Informatika</td>
-            <td class="table-mahasiswa-data"></td>
+            <td class="table-mahasiswa-data"><?php echo $mhs['nama'] ?></td>
+            <td class="table-mahasiswa-data"><?php echo $mhs['nim'] ?></td>
+            <td class="table-mahasiswa-data"><?php echo $mhs['kelas'] ?></td>
+            <td class="table-mahasiswa-data"><?php echo $mhs['prodi'] ?></td>
+            <td class="table-mahasiswa-data" style="display: flex; justify-content: space-around;">
+              <a href="edit.php?id=<?php echo $mhs['id']?>" style="color:orange;">
+                <i class="fas fa-pen"></i>
+              </a>
+              <a href="delete.php?id=<?php echo $mhs['id']?>" style="color: red;">
+                <i class="fas fa-trash-can"></i>
+              </a>
+            </td>
           </tr>
+          <?php $i++; endforeach?>
         </tbody>
       </table>
     </main>
-
-    <?php include 'templates/footer.php' ?>
     <script src="scripts/script.js"></script>
   </body>
 </html>

@@ -279,6 +279,30 @@ nav button {
   color: var(--hijau);
 }
 
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 80%;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+}
+
+.form-group input, select {
+  height: 30px;
+}
+
+.input-radio {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
 @media screen and (max-width: 760px) {
   .nav-header {
     display: flex;

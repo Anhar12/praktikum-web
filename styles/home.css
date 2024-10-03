@@ -275,6 +275,10 @@ nav button {
   background: rgba(0, 0, 0, 0.3);
 }
 
+.nav-active {
+  color: var(--hijau);
+}
+
 @media screen and (max-width: 760px) {
   .nav-header {
     display: flex;

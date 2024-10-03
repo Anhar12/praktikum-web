@@ -36,32 +36,20 @@
             <th class="table-mahasiswa-header">Foto</th>
             <th class="table-mahasiswa-header">Nama</th>
             <th class="table-mahasiswa-header">NIM</th>
+            <th class="table-mahasiswa-header">Kelas</th>
+            <th class="table-mahasiswa-header">Prodi</th>
+            <th class="table-mahasiswa-header">Aksi</th>
           </tr>
         </thead>
         <tbody>
           <tr class="table-mahasiswa-row">
             <td class="table-mahasiswa-data">1</td>
-            <td class="table-mahasiswa-data">Ini foto</td>
+            <td class="table-mahasiswa-data"></td>
             <td class="table-mahasiswa-data">Muhammad Farrel Sirah</td>
             <td class="table-mahasiswa-data">2209106138</td>
-          </tr>
-          <tr class="table-mahasiswa-row">
-            <td class="table-mahasiswa-data">2</td>
-            <td class="table-mahasiswa-data">Ini foto</td>
-            <td class="table-mahasiswa-data">Miftahul Huda</td>
-            <td class="table-mahasiswa-data">2209106098</td>
-          </tr>
-          <tr class="table-mahasiswa-row">
-            <td class="table-mahasiswa-data">3</td>
-            <td class="table-mahasiswa-data">Ini foto</td>
-            <td class="table-mahasiswa-data">Ahmad Dhafin</td>
-            <td class="table-mahasiswa-data">2209106169</td>
-          </tr>
-          <tr class="table-mahasiswa-row">
-            <td class="table-mahasiswa-data">4</td>
-            <td class="table-mahasiswa-data">Ini foto</td>
-            <td class="table-mahasiswa-data">Fiko Anugrah Ramdani</td>
-            <td class="table-mahasiswa-data">2209106313</td>
+            <td class="table-mahasiswa-data">C</td>
+            <td class="table-mahasiswa-data">Informatika</td>
+            <td class="table-mahasiswa-data"></td>
           </tr>
         </tbody>
       </table>

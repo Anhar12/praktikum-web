@@ -27,6 +27,9 @@
             </a>
         </li>
     </menu>
+    <a href="login.php" class="button">
+        Login
+    </a>
 </nav>
 
 <!-- sidebar -->
@@ -60,10 +63,10 @@
             </li>
         </menu>
 
-        <a href="login.php" class="button">
-            Login
-        </a>
     </div>
+    <a href="login.php" class="button">
+        Login
+    </a>
 </nav>
 
 <div class="overlay"></div>

@@ -19,21 +19,35 @@
         $kelas = $_POST['kelas'];
         $prodi = $_POST['prodi'];
 
-        $query = "UPDATE mahasiswa SET nama = '$nama', nim = '$nim', kelas = '$kelas', prodi = '$prodi' where id = '$id'";
-
-        $result = mysqli_query($conn, $query);
-        
-        if($result){
+        $namaFile = $_POST['fileName'];
+        $tempFile = $_FILES['foto']['tmp_name'];
+        $fileName = $_FILES['foto']['name'];
+        $eks = explode('.', $fileName);
+        $eks = strtolower(end($eks));
+        $fileName = $namaFile . '.' . $eks;
+        if (move_uploaded_file($tempFile, 'assets/'.$fileName)) {
+            $query = "UPDATE mahasiswa SET nama = '$nama', nim = '$NIM', kelas = '$kelas', prodi = '$prodi', foto = '$fileName' where id = '$id'";
+    
+            $result = mysqli_query($conn, $query);
+            
+            if($result){
+                echo "
+                    <script>
+                        alert('Berhasil Update data');
+                        document.location.href = 'lihat_data.php';
+                    </script>
+                ";
+            }else{
+                echo "
+                    <script>
+                        alert('Gagal Update data');
+                    </script>
+                ";
+            }
+        } else {
             echo "
                 <script>
-                    alert('Berhasil Update data');
-                    document.location.href = 'lihat_data.php';
-                </script>
-            ";
-        }else{
-            echo "
-                <script>
-                    alert('Gagal Update data');
+                    alert('Gagal upload foto');
                 </script>
             ";
         }
@@ -58,10 +72,10 @@
 
     <main class="data-mahasiswa-section">
       <h1 class="data-mahasiswa-title">
-        Tambah Data Mahasiswa Universitas Mulawarman
+        Update Data Mahasiswa Universitas Mulawarman
       </h1>
 
-      <form class="form" action="" method="post" autocomplete="off">
+      <form class="form" action="" method="post" autocomplete="off" enctype="multipart/form-data">
         <div class="form-group">
             <label for="NIM">NIM</label>
             <input type="text" name="NIM" id="NIM" value="<?php echo $mahasiswa['nim']; ?>">
@@ -98,11 +112,17 @@
             </select>
         </div>
 
+        <div class="form-group">
+            <label for="foto">Foto</label>
+            <input type="text" name="fileName" id="fileName" 
+            value="<?php echo $mahasiswa['foto']; ?>">
+            <input type="file" name="foto" id="foto">
+        </div>
+
         <input type="submit" value="Update" name="update" class="button">
       </form>
     </main>
 
-    <?php include 'templates/footer.php' ?>
     <script src="scripts/script.js"></script>
   </body>
 </html>

@@ -41,7 +41,7 @@
         </form>
       </search>
 
-      <div style="width: 100%;">
+      <div style="width: 100%; margin-top: 30px;">
         <a href="tambah_data.php" class="button">
           <i class="fa-solid fa-plus"></i>
           Tambah Mahasiswa
@@ -50,7 +50,7 @@
 
       <table class="table-mahasiswa">
         <thead>
-          <tr class="table-mahasiswa-row">
+          <tr class="table-mahasiswa-row" style="color:white;">
             <th class="table-mahasiswa-header">No</th>
             <th class="table-mahasiswa-header">Foto</th>
             <th class="table-mahasiswa-header">Nama</th>
@@ -64,12 +64,14 @@
           <?php $i = 1; foreach($mahasiswa as $mhs): ?>
           <tr class="table-mahasiswa-row">
             <td class="table-mahasiswa-data"><?php echo $i ?></td>
-            <td class="table-mahasiswa-data"></td>
+            <td class="table-mahasiswa-data">
+              <img src="assets/<?php echo $mhs['foto'] ?>" width="100px">
+            </td>
             <td class="table-mahasiswa-data"><?php echo $mhs['nama'] ?></td>
             <td class="table-mahasiswa-data"><?php echo $mhs['nim'] ?></td>
             <td class="table-mahasiswa-data"><?php echo $mhs['kelas'] ?></td>
             <td class="table-mahasiswa-data"><?php echo $mhs['prodi'] ?></td>
-            <td class="table-mahasiswa-data" style="display: flex; justify-content: space-around;">
+            <td class="table-mahasiswa-data">
               <a href="edit.php?id=<?php echo $mhs['id']?>" style="color:orange;">
                 <i class="fas fa-pen"></i>
               </a>

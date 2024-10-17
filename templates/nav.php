@@ -27,10 +27,6 @@
             </a>
         </li>
     </menu>
-
-    <a href="login.php" class="button">
-        Login
-    </a>
 </nav>
 
 <!-- sidebar -->

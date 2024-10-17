@@ -63,4 +63,20 @@ body {
   border-radius: 25px;
   background-color: var(--hijau);
   color: white;
+  cursor: pointer;
+}
+
+.back-btn {
+  text-align: center;
+  border: 0;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 8px 12px;
+  border-radius: 25px;
+  color: var(--hijau);
+}
+
+.back-btn:hover {
+  background: var(--hijau);
+  color: white;
 }

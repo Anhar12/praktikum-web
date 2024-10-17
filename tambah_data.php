@@ -7,21 +7,38 @@
         $kelas = $_POST['kelas'];
         $prodi = $_POST['prodi'];
 
-        $query = "INSERT INTO mahasiswa VALUES('', '$nama', '$NIM', '$kelas', '$prodi', '')";
+        $namaFile = $_POST['fileName'];
+        $tempFile = $_FILES['foto']['tmp_name'];
+        $fileName = $_FILES['foto']['name'];
 
-        $result = mysqli_query($conn, $query);
+        $eks = explode('.', $fileName);
+        $eks = strtolower(end($eks));
 
-        if($result){
-            echo "
-                <script>
-                    alert('Berhasil menambah data');
-                    document.location.href = 'lihat_data.php';
-                </script>
-            ";
+        $fileName = $namaFile . '.' . $eks;
+
+        if (move_uploaded_file($tempFile, 'assets/'.$fileName)) {
+            $query = "INSERT INTO mahasiswa VALUES('', '$nama', '$NIM', '$kelas', '$prodi', '$fileName')";
+    
+            $result = mysqli_query($conn, $query);
+    
+            if($result){
+                echo "
+                    <script>
+                        alert('Berhasil menambah data');
+                        document.location.href = 'lihat_data.php';
+                    </script>
+                ";
+            }else{
+                echo "
+                    <script>
+                        alert('Gagal menambah data');
+                    </script>
+                ";
+            }
         }else{
             echo "
                 <script>
-                    alert('Gagal menambah data');
+                    alert('Gagal upload foto');
                 </script>
             ";
         }
@@ -49,7 +66,7 @@
         Tambah Data Mahasiswa Universitas Mulawarman
       </h1>
 
-      <form class="form" action="" method="post" autocomplete="off">
+      <form class="form" action="" method="post" autocomplete="off" enctype="multipart/form-data">
         <div class="form-group">
             <label for="NIM">NIM</label>
             <input type="text" name="NIM" id="NIM">
@@ -82,6 +99,12 @@
                 <option value="Teknik Industri">Teknik Industri</option>
                 <option value="Teknik Elektro">Teknik Elektro</option>
             </select>
+        </div>
+
+        <div class="form-group">
+            <label for="foto">Foto</label>
+            <input type="text" name="fileName" id="fileName">
+            <input type="file" name="foto" id="foto">
         </div>
 
         <input type="submit" value="Tambah" name="tambah" class="button">

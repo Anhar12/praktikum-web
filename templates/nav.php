@@ -1,3 +1,9 @@
+<?php
+if (session_status() != PHP_SESSION_ACTIVE){
+    session_start();
+}
+?>
+
 <!-- Navbar -->
 <nav class="navbar-section">
     <div class="nav-header">
@@ -16,20 +22,35 @@
                 Beranda
             </a>
         </li>
-        <li class="navbar-item <?php echo isset($lihat) && $lihat ? 'nav-active' : '' ?>">
-            <a href="lihat_data.php">
-                Lihat Data
-            </a>
-        </li>
+
+        <?php 
+        if (isset($_SESSION['login']) && $_SESSION['login']) { 
+            ?>
+            <li class="navbar-item <?php echo isset($lihat) && $lihat ? 'nav-active' : '' ?>">
+                <a href="lihat_data.php">
+                    Lihat Data
+                </a>
+            </li>
+            <?php 
+        }
+        ?>
+
         <li class="navbar-item <?php echo isset($about) && $about ? 'nav-active' : '' ?>">
             <a href="tentang_kami.php">
                 Tentang Kami
             </a>
         </li>
     </menu>
-    <a href="login.php" class="button">
+
+    <?php echo (isset($_SESSION['login']) && $_SESSION['login']) ?
+    '<a href="logout.php" class="button">
+        Logout
+    </a>'
+    :
+    '<a href="login.php" class="button">
         Login
-    </a>
+    </a>'?>
+    
 </nav>
 
 <!-- sidebar -->
@@ -51,11 +72,17 @@
                     Beranda
                 </a>
             </li>
+            <?php 
+            if (isset($_SESSION['login']) && $_SESSION['login']) { 
+            ?>
             <li class="sidebar-item">
                 <a href="lihat_data.php">
                     Lihat Data
                 </a>
             </li>
+            <?php
+            }
+            ?>
             <li class="sidebar-item">
                 <a href="tentang_kami.php">
                     Tentang Kami
@@ -64,9 +91,14 @@
         </menu>
 
     </div>
-    <a href="login.php" class="button">
+    <?php echo (isset($_SESSION['login']) && $_SESSION['login']) ?
+    '<a href="logout.php" class="button">
+        Logout
+    </a>'
+    :
+    '<a href="login.php" class="button">
         Login
-    </a>
+    </a>'?>
 </nav>
 
 <div class="overlay"></div>

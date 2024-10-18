@@ -1,3 +1,53 @@
+<?php
+session_start();
+
+require "koneksi.php";
+
+if (isset($_POST["submit"])) {
+  $username = $_POST["username"];
+  $password = $_POST["password"];
+  $query = "SELECT * FROM users WHERE username = '$username'";
+  $result = mysqli_query($conn, $query);
+
+  if (mysqli_num_rows($result) === 1) {
+    $user = mysqli_fetch_assoc($result);
+    if (password_verify($password, $user['password'])) {
+      $_SESSION['login'] = true;
+
+      if ($user['role'] === 'Admin') {
+        $_SESSION['role'] = 'admin';
+        echo "
+          <script>
+          alert('Login berhasil! Selamat datang Admin.');
+          document.location.href = 'index.php';
+          </script>
+          ";
+      } else {
+        $_SESSION['role'] = 'user';
+        echo "
+          <script>
+          alert('Login berhasil! Selamat datang User.');
+          document.location.href = 'index.php';
+          </script>
+          ";
+      }
+    } else {
+      echo "
+        <script>
+        alert('Password salah!');
+        </script>
+        ";
+    }
+  } else {
+    echo "
+      <script>
+      alert('Username tidak ditemukan!');
+      </script>
+      ";
+  }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,7 +89,7 @@
         Login
       </button>
     </form>
-    
+
     <div style="display: flex; justify-content:center; width: 100%; margin-top: 12px; align-items: center; justify-content:space-around;">
       <a href="index.php" class="back-btn">
         Back
